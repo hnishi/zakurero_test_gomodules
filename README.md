@@ -24,3 +24,14 @@ zakurero_test_gomodules => a sample module
     └── hello.go
 ```
 
+## Experiments
+
+```
+$ GO111MODULE=on go run hello2.go
+build _/Users/Hiroshi.Nishigami/projects/ntttx/zakurero_test_gomodules/goodbye: cannot find module for path _/Users/Hiroshi.Nishigami/projects/ntttx/zakurero_test_gomodules/goodbye
+```
+
+```
+$ GO111MODULE=off go run hello2.go
+Goodbye
+```
