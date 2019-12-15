@@ -79,3 +79,22 @@ $ GO111MODULE=off go run hello2.go
 Goodbye
 ```
 
+### このレポジトリをgo getできるか試してみた
+
+```
+$ GO111MODULE=on go get github.com/hnishi/zakurero_test_gomodules
+
+go: finding github.com/hnishi/zakurero_test_gomodules latest
+go get: github.com/hnishi/zakurero_test_gomodules@v0.0.0-20191215082227-606721d8e919 requires
+	local.packages/goodbye@v0.0.0: unrecognized import path "local.packages/goodbye" (https fetch: Get https://local.packages/goodbye?go-get=1: dial tcp: lookup local.packages on 192.168.65.1:53: no such host)
+```
+
+https://local.packages/goodbye が見つからないと、言っている。
+go.mod の replace で記述した、相対パス ./goodbye は、 go get では、よしなにしてくれないようである。
+ダウンロードは、してくれている。
+
+```
+$ ls /go/pkg/mod/github.com/hnishi/zakurero_test_gomodules\@v0.0.0-20191215082227-606721d8e919
+LICENSE  README.md  go.mod  go.sum  hello  zakurero_test_gomodules.go
+```
+
