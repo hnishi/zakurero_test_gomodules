@@ -26,6 +26,17 @@ zakurero_test_gomodules => a sample module
 
 ## Experiments
 
+## モジュール名にドットが含まれていない場合のエラー
+
+```go
+import "localpackage/goodbye"
+```
+
+```
+$ go run hello.go
+build command-line-arguments: cannot load goodbye: malformed module path "goodbye": missing dot in first path element
+```
+
 ### goodbye/にgo.modがない場合のエラー
 
 ```
@@ -34,6 +45,11 @@ go: local.packages/goodbye@v0.0.0: parsing ../goodbye/go.mod: open /Users/Hirosh
 ```
 
 ### importを相対パスで指定した場合
+
+goodbyeというローカルパッケージを使いたい。
+Go Modulesを使わない場合には、相対パスでimportすれば良かったが、Go Modulesではそれが禁止されている。
+Module-aware modeがonのときは、モジュール名で指定しなければならない。
+試しに、相対パスで指定したときのエラーは以下。
 
 ```go:hello2.go
     package main
@@ -47,8 +63,6 @@ go: local.packages/goodbye@v0.0.0: parsing ../goodbye/go.mod: open /Users/Hirosh
      fmt.Println(goodbye.Goodbye())
     }
 ```
-
-Module-aware modeがonのときは、モジュール名でしていなければならないので、失敗する。
 
 ```
 $ GO111MODULE=on go run hello2.go
