@@ -1,4 +1,4 @@
-module example.com/me/hello
+module github.com/hnishi/zakurero_test_gomodules
 
 go 1.13
 
