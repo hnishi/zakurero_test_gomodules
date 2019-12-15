@@ -3,9 +3,9 @@
     import (
      "fmt"
 
-     "local.packages/goodbye"
+     "rsc.io/quote"
     )
 
     func main() {
-     fmt.Println(goodbye.Goodbye())
+     fmt.Println(quote.Hello())
     }
