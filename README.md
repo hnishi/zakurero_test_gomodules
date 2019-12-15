@@ -5,8 +5,9 @@ To explain Go Modules (go1.13)
 ## TO RUN
 
 ```
-cd hello
-go run .
+git clone https://github.com/hnishi/zakurero_test_gomodules.git
+cd ./zakurero_test_gomodules/hello
+go run hello.go
 ```
 
 ## Directory Tree
@@ -21,6 +22,10 @@ zakurero_test_gomodules => a sample module
 └── hello
     └── hello.go
 ```
+
+hello がローカルパッケージを呼び出す側です。
+goodbye が、呼び出される側のローカルパッケージという想定です。
+
 
 ## Experiments
 
