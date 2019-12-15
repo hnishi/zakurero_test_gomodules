@@ -13,8 +13,6 @@ go run .
 
 ```txt
 zakurero_test_gomodules => a sample module
-├── LICENSE
-├── README.md
 ├── go.mod
 ├── go.sum
 ├── goodbye => a module (package) inside a module
@@ -26,7 +24,7 @@ zakurero_test_gomodules => a sample module
 
 ## Experiments
 
-## モジュール名にドットが含まれていない場合のエラー
+### モジュール名にドットが含まれていない場合のエラー
 
 ```go
 import "localpackage/goodbye"
