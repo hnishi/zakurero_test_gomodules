@@ -44,7 +44,7 @@ build command-line-arguments: cannot load goodbye: malformed module path "goodby
 
 ```
 $ go run hello.go
-go: local.packages/goodbye@v0.0.0: parsing ../goodbye/go.mod: open /Users/Hiroshi.Nishigami/projects/ntttx/zakurero_test_gomodules/goodbye/go.mod: no such file or directory
+go: local.packages/goodbye@v0.0.0: parsing ../goodbye/go.mod: open /path/to/zakurero_test_gomodules/goodbye/go.mod: no such file or directory
 ```
 
 ### importを相対パスで指定した場合
@@ -69,7 +69,7 @@ Module-aware modeがonのときは、モジュール名で指定しなければ�
 
 ```
 $ GO111MODULE=on go run hello2.go
-build _/Users/Hiroshi.Nishigami/projects/ntttx/zakurero_test_gomodules/goodbye: cannot find module for path _/Users/Hiroshi.Nishigami/projects/ntttx/zakurero_test_gomodules/goodbye
+build _/path/to/zakurero_test_gomodules/goodbye: cannot find module for path _/path/to/zakurero_test_gomodules/goodbye
 ```
 
 Module-aware modeがoffのときは、成功する。
