@@ -94,8 +94,7 @@ go.mod の replace で記述した、相対パス ./goodbye は、 go get では
 ダウンロードは、してくれている。
 
 ```
-$ ls $
-{GOPATH}/pkg/mod/github.com/hnishi/zakurero_test_gomodules\@v0.0.0-20191215082227-606721d8e919
+$ ls ${GOPATH}/pkg/mod/github.com/hnishi/zakurero_test_gomodules\@v0.0.0-20191215082227-606721d8e919
 LICENSE  README.md  go.mod  go.sum  hello  zakurero_test_gomodules.go
 ```
 
